@@ -26,7 +26,8 @@ server {
         alias /var/www/html/stage/portfolio/$1;
         expires 15d;
         add_header Cache-Control no-cache;
- }
+
+    }
 
     # for portfolio non optimized
 
