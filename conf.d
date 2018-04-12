@@ -14,7 +14,6 @@ server {
 
     root   /var/www/html;
 
-
     location / {
         index  index.html index.htm index.php;
 
@@ -29,9 +28,14 @@ server {
 
     }
 
+    location ~* ^.*/portfolio-optimized/(.*\.(jpg|jpeg|png|gif|ico|css|js))$ {
+        expires 15d;
+
+    }
+
     # for portfolio non optimized
 
-    location ~* ^.*/portfolio-.*/$ {
+    location ~* ^.*/portfolio-(expires|no-store|no-cache)/$ {
         try_files $uri /portfolio/index.html;
     }
 
